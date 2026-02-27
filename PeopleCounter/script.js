@@ -1,23 +1,29 @@
 let count = 0;
 
-const countDsiplay = document.getElementById("counter");
+const countDisplay = document.getElementById("counter");
 const addBtn = document.getElementById("addBtn");
 const subBtn = document.getElementById("subBtn");
 const clearBtn = document.getElementById("clearBtn");
 
 
-addBtn.onclick = function() {
+addBtn.addEventListener('click', function(){
     count++;
-    countDsiplay.textContent = count;
-}
+    countDisplay.textContent = count;
+})
 
 
-subBtn.onclick = function() {
+subBtn.addEventListener('click', function(){
     count--;
     countDsiplay.textContent = count;
+})
+
+clearBtn.addEventListener('click', function(){
+    count = 0; 
+    countDisplay.textContent = count;
+})
+
+if(countDisplay < 0) {
+    count = 0;
+    countDisplay.textContent = count;
 }
 
-clearBtn.onclick = function() {
-    let count = 0;
-    countDsiplay.textContent = count;
-}
